@@ -1,8 +1,8 @@
 # squat-analyze
-스쿼트 자세 분석 AI 모델
+# 스쿼트 자세 분석 AI 모델
 MediaPipe와 Bidirectional LSTM을 활용한 스쿼트 운동 자세 분석 및 분류 시스템입니다. 딥러닝 모델을 통해 스쿼트 동작의 유효성을 실시간으로 판별합니다.
 
-🚀 주요 기능
+# 🚀 주요 기능
 실시간 포즈 감지: MediaPipe Holistic을 통한 전신 키포인트 추출
 
 딥러닝 분류: Bidirectional LSTM 모델을 통한 스쿼트 자세 유효성 판별
@@ -11,7 +11,7 @@ MediaPipe와 Bidirectional LSTM을 활용한 스쿼트 운동 자세 분석 및 
 
 실시간 분석: 웹캠 또는 비디오 파일을 통한 실시간 자세 분석
 
-🛠️ 기술 스택
+# 🛠️ 기술 스택
 AI/ML
 MediaPipe: 실시간 포즈 감지 및 키포인트 추출
 
@@ -26,14 +26,14 @@ NumPy: 수치 연산 및 배열 처리
 
 Scikit-learn: 데이터 분할 및 평가 메트릭
 
-📋 사전 요구사항
+# 📋 사전 요구사항
 Python 3.8 이상
 
 CUDA 지원 GPU (선택사항, 훈련 가속화용)
 
 웹캠 (실시간 분석용)
 
-⚙️ 설치 및 설정
+# ⚙️ 설치 및 설정
 1. 프로젝트 클론
 bash
 git clone https://github.com/your-username/squat-pose-analyzer.git
@@ -61,7 +61,7 @@ matplotlib>=3.5.0
 
 출력: 2클래스 분류 (Valid/Invalid)
 
-📊 성능 최적화 기법
+# 📊 성능 최적화 기법
 1. 데이터 증강
 python
 # 가우시안 노이즈 추가

@@ -1,7 +1,7 @@
 # squat-analyze Spring Boot JWT 기반 분석 서버
 Spring Boot, Spring Security, JWT를 활용한 스쿼트 자세 분석 백엔드 서버입니다. 딥러닝 모델을 통한 운동 자세 분석과 AWS S3 파일 저장, RDS 데이터베이스 연동을 제공합니다.
 
-🚀 주요 기능
+# 🚀 주요 기능
 JWT 기반 인증/인가: Spring Security를 통한 토큰 기반 보안
 
 스쿼트 자세 분석: MediaPipe + LSTM 딥러닝 모델을 활용한 실시간 자세 분석
@@ -12,7 +12,7 @@ JWT 기반 인증/인가: Spring Security를 통한 토큰 기반 보안
 
 RESTful API: 표준화된 REST API 제공
 
-🛠️ 기술 스택
+# 🛠️ 기술 스택
 Backend
 Framework: Spring Boot 3.x
 
@@ -30,7 +30,7 @@ Maven 3.8+
 DBMS
 AWS RDS MySQL 8.0
 
-📋 사전 요구사항
+# 📋 사전 요구사항
 Java 17 이상
 
 Maven 3.8+
@@ -78,7 +78,7 @@ AWS Console에서 S3 서비스 접속
 
 퍼블릭 액세스 차단 해제 (필요시)
 
-🚀 실행
+# 🚀 실행
 개발 환경
 bash
 mvn spring-boot:run
