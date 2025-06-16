@@ -1,0 +1,591 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #32d74b;
+  --primary-hover: #28c840;
+  --primary-light: #a8f5b3;
+  --accent: #7ed321;
+  --accent-dark: #5cb85c;
+  --success: #34c759;
+  --danger: #ff3b30;
+  --warning: #ff9500;
+  --bg-primary: #fafffe;
+  --bg-secondary: #f5f9f5;
+  --bg-tertiary: #e8f5e8;
+  --text-primary: #1d1d1f;
+  --text-secondary: #86868b;
+  --text-muted: #a1a1a6;
+  --border: #d2d2d7;
+  --border-light: #e5e5ea;
+  --shadow-sm: 0 1px 3px rgba(50, 215, 75, 0.1);
+  --shadow-md: 0 4px 12px rgba(50, 215, 75, 0.15);
+  --shadow-lg: 0 8px 25px rgba(50, 215, 75, 0.2);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+body {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.App {
+  min-height: 100vh;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(50, 215, 75, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(126, 211, 33, 0.05) 0%, transparent 50%),
+    var(--bg-primary);
+}
+
+/* 로딩 스피너 - 운동 테마 */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 24px;
+}
+
+.loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--bg-tertiary);
+  border-top: 3px solid var(--primary);
+  border-radius: 50%;
+  animation: pulse-spin 1.2s ease-in-out infinite;
+  position: relative;
+}
+
+.loading-spinner::after {
+  content: '💪';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+}
+
+@keyframes pulse-spin {
+  0% { 
+    transform: rotate(0deg) scale(1);
+    border-top-color: var(--primary);
+  }
+  50% { 
+    transform: rotate(180deg) scale(1.1);
+    border-top-color: var(--accent);
+  }
+  100% { 
+    transform: rotate(360deg) scale(1);
+    border-top-color: var(--primary);
+  }
+}
+
+/* 인증 페이지 - 스포츠 카드 스타일 */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.auth-form {
+  background: var(--bg-secondary);
+  padding: 48px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 420px;
+  border: 2px solid var(--border-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+}
+
+.auth-form::after {
+  content: '🏃‍♂️';
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  opacity: 0.3;
+}
+
+.auth-form h2 {
+  text-align: center;
+  margin-bottom: 32px;
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 28px;
+  position: relative;
+}
+
+.auth-form h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 16px;
+  background: white;
+  transition: var(--transition);
+  color: var(--text-primary);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(50, 215, 75, 0.1);
+  transform: translateY(-2px);
+}
+
+.auth-button {
+  width: 100%;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.auth-button:hover:not(:disabled)::before {
+  left: 100%;
+}
+
+.auth-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.auth-button:disabled {
+  background: var(--text-muted);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 24px;
+  color: var(--text-secondary);
+}
+
+.auth-link a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.auth-link a:hover {
+  color: var(--accent-dark);
+}
+
+.error-message {
+  background: linear-gradient(135deg, rgba(255, 59, 48, 0.1), rgba(255, 149, 0, 0.1));
+  color: var(--danger);
+  padding: 16px 20px;
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+  border-left: 4px solid var(--danger);
+  font-weight: 500;
+}
+
+/* 업로드 페이지 - 스포츠 대시보드 */
+.upload-container {
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.upload-header {
+  background: white;
+  padding: 20px 40px;
+  border-bottom: 3px solid var(--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.upload-header h1 {
+  color: var(--text-primary);
+  margin: 0;
+  font-weight: 800;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.upload-header h1::before {
+  content: '🏋️‍♀️';
+  font-size: 28px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  background: var(--bg-secondary);
+  border-radius: 25px;
+  border: 2px solid var(--border-light);
+}
+
+.user-info span {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.logout-button {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, var(--danger), #ff6b6b);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.logout-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 59, 48, 0.3);
+}
+
+.upload-main {
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.upload-section {
+  background: white;
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--border-light);
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.upload-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.upload-section h2 {
+  margin-bottom: 28px;
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.upload-section h2::before {
+  content: '📹';
+  font-size: 24px;
+}
+
+.upload-area {
+  border: 3px dashed var(--border);
+  border-radius: var(--radius-lg);
+  padding: 48px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-bottom: 24px;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.upload-area::before {
+  content: '🎯';
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 32px;
+  opacity: 0.3;
+}
+
+.upload-area:hover,
+.upload-area.drag-over {
+  border-color: var(--primary);
+  background: var(--bg-tertiary);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.upload-placeholder p {
+  margin: 12px 0;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.file-info {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.file-info p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.upload-button {
+  width: 100%;
+  padding: 18px 24px;
+  background: linear-gradient(135deg, var(--success), var(--primary));
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.upload-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.upload-button:disabled {
+  background: var(--text-muted);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 결과 섹션 - 스포츠 통계 카드 */
+.result-section {
+  background: white;
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--border-light);
+  position: relative;
+}
+
+.result-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.result-section h2 {
+  margin-bottom: 32px;
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.result-section h2::before {
+  content: '📊';
+  font-size: 24px;
+}
+
+.result-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 32px;
+}
+
+.score-section,
+.feedback-section {
+  padding: 32px;
+  border-radius: var(--radius);
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-light);
+  position: relative;
+}
+
+.score-section {
+  text-align: center;
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+}
+
+.score-section::before {
+  content: '🏆';
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 24px;
+  opacity: 0.5;
+}
+
+.feedback-section::before {
+  content: '💡';
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 24px;
+  opacity: 0.5;
+}
+
+.score-section h3,
+.feedback-section h3 {
+  margin-bottom: 20px;
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.score {
+  font-size: 64px;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 20px 0;
+  text-shadow: 0 4px 8px rgba(50, 215, 75, 0.3);
+}
+
+.feedback {
+  background: white;
+  padding: 24px;
+  border-radius: var(--radius);
+  border-left: 6px solid var(--primary);
+  line-height: 1.7;
+  color: var(--text-primary);
+  white-space: pre-line;
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.feedback::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .upload-header {
+    padding: 16px 24px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .upload-main {
+    padding: 24px;
+  }
+
+  .upload-section,
+  .result-section {
+    padding: 28px;
+  }
+
+  .result-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .upload-area {
+    padding: 32px 20px;
+  }
+
+  .auth-form {
+    padding: 36px 28px;
+  }
+
+  .score {
+    font-size: 48px;
+  }
+}
