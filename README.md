@@ -1,1 +1,1 @@
-# squat-analyze
+# squat-analysis
