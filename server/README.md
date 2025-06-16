@@ -1,4 +1,4 @@
-# squat-analyzeSpring Boot JWT 기반 분석 서버
+# squat-analyze Spring Boot JWT 기반 분석 서버
 Spring Boot, Spring Security, JWT를 활용한 스쿼트 자세 분석 백엔드 서버입니다. 딥러닝 모델을 통한 운동 자세 분석과 AWS S3 파일 저장, RDS 데이터베이스 연동을 제공합니다.
 
 🚀 주요 기능
