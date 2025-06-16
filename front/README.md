@@ -1,7 +1,7 @@
 # React JWT 비디오 분석 애플리케이션
 백엔드와 연동되는 JWT 기반 인증 시스템을 갖춘 React 애플리케이션입니다.
 
-## 주요 기능
+# 주요 기능
 
 - JWT 기반 사용자 인증 (ACCESS/REFRESH 토큰)
 - 비디오 파일 업로드 및 분석
@@ -9,7 +9,7 @@
 - 자동 토큰 갱신
 - 반응형 디자인
 
-## 설치 및 실행
+# 설치 및 실행
 
 ```bash
 # 의존성 설치
@@ -22,7 +22,7 @@ npm start
 npm run build
 ```
 
-## API 엔드포인트
+# API 엔드포인트
 
 - `POST /login` - 로그인
 - `POST /join` - 회원가입
@@ -30,7 +30,7 @@ npm run build
 - `POST /reissue` - 토큰 재발급
 - `POST /logout` - 로그아웃
 
-## 기술 스택
+# 기술 스택
 
 - React 18
 - React Router DOM
@@ -38,7 +38,7 @@ npm run build
 - Context API
 - CSS Grid/Flexbox
 
-## 폴더 구조
+# 폴더 구조
 
 ```
 src/
@@ -50,7 +50,7 @@ src/
 └── styles/        # CSS 스타일
 ```
 
-## 보안 특징
+# 보안 특징
 
 - ACCESS 토큰은 메모리에 저장 (XSS 방지)
 - REFRESH 토큰은 HttpOnly 쿠키에 저장

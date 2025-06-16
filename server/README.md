@@ -30,6 +30,19 @@ Maven 3.8+
 DBMS
 AWS RDS MySQL 8.0
 
+## 폴더 구조
+
+```
+src/main/java/opensource/opensource_project
+├── aop/           # Time Trace Aop
+├── config/        # S3, Security Config 
+├── controller/    # 컨트롤러 경로
+├── domain/        # JPA Entities
+├── dto/           # 데이터 전송 객체 저장
+├── jwt/           # 인증 필터 및 jwt util
+├── repository/    # repository (JPA 기반)
+└── service/       # service 레이어 비지니스 로직
+```
 # 📋 사전 요구사항
 Java 17 이상
 
