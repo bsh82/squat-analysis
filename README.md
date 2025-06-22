@@ -1,7 +1,7 @@
 # squat-analysis
 AI 및 영상처리 기술을 통한 스쿼트 점수 및 피드백 출력 시스템
 
-AI - BILSTM
+AI - BILSTM </n>
 영상처리 - OpenCV, MediaPipe, NumPy
 ## Description of Project
 <img width="500" alt="Image" src="https://github.com/user-attachments/assets/8a961802-09f6-4928-a028-5885b1203f81" />
